@@ -1,6 +1,6 @@
 package com.safe.core;
 
-import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 
 public class LocationService {
@@ -12,7 +12,7 @@ public class LocationService {
         this.locationManager = locationManager;
     }
 
-    public Location getLocation(){
-        return null;
+    public void registerListener(LocationListener locationListener) {
+         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 }

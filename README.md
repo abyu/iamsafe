@@ -38,3 +38,7 @@ Determining if a location is safe is done using data available. (Basicially an a
 		* Dep for roboguice
 		* should be under the folder androidapp/safe/libs
 		* get it from [https://github.com/roboguice/roboguice/wiki/InstallationNonMaven](https://github.com/roboguice/roboguice/wiki/InstallationNonMaven)
+	* mockito-all-1.9.5.jar
+		* Used for test
+		* should be under the folder androidapp/safe/libs
+		* get it from [https://code.google.com/p/mockito/downloads/detail?name=mockito-1.9.5.zip](https://code.google.com/p/mockito/downloads/detail?name=mockito-1.9.5.zip) or [https://code.google.com/p/mockito/downloads/detail?name=mockito-all-1.9.5.jar](https://code.google.com/p/mockito/downloads/detail?name=mockito-all-1.9.5.jar)
