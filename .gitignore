@@ -22,3 +22,6 @@ local.properties
 # IntelliJ Project files
 workspace.xml
 tasks.xml
+
+# Ignoring libs for now
+libs
