@@ -13,16 +13,13 @@ Determining if a location is safe is done using data available. (Basicially an a
 * Decide on tech stack
 * Build the actual app
 
-
 ##### Android Application
 * The Android application source code is under the folder androidapp with the name safe
 * The source is a Idea project (IntelliJ 12 CE at the time of creating this)
+* pom.xml file under androidapp folder has all the dependencies defined, install maven(Apache Maven 3.0.5 was the version used, hoever newer versions should work, if not please report)
+* Run _mvn initialize_ to download all deps and to copy to respective folders 
 * Following are the dependencies 
 	* junit-4.11.jar 
-		* Used for test
-		* should be under the folder androidapp/libs
-		* get the POJ from [https://github.com/junit-team/junit/wiki/Download-and-Install](https://github.com/junit-team/junit/wiki/Download-and-Install)
-	* hamcrest-core-1.3.jar
 		* Used for test
 		* should be under the folder androidapp/libs
 		* get the POJ from [https://github.com/junit-team/junit/wiki/Download-and-Install](https://github.com/junit-team/junit/wiki/Download-and-Install)

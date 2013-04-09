@@ -1,0 +1,93 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+  <groupId>com.safe</groupId>
+  <artifactId>Safe</artifactId>
+  <version>1.0.0</version>
+
+	<properties>
+		<srcDir>${project.basedir}/safe</srcDir>
+  	<testLibDir>${project.basedir}/libs</testLibDir>
+		<srcLibDir>${srcDir}/libs</srcLibDir>
+		<jUnitVersion>4.11</jUnitVersion>
+		<roboGuiceVersion>2.0</roboGuiceVersion>
+		<jsr305Version>1.3.9</jsr305Version>
+		<mockitoVersion>1.9.5</mockitoVersion>
+	</properties>
+
+	<build>
+	    <plugins>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-dependency-plugin</artifactId>
+	        <version>2.7</version>
+	        <executions>
+	          <execution>
+	            <id>copy-test-dependencies</id>
+							<phase>initialize</phase>
+	            <goals>
+	              <goal>copy-dependencies</goal>
+	            </goals>
+	            <configuration>
+	              <outputDirectory>${testLibDir}</outputDirectory>
+								<excludeTransient>true</excludeTransient>
+								<excludeScope>compile</excludeScope>
+								<excludeScope>provided</excludeScope>
+								<excludeScope>runtime</excludeScope>
+	            </configuration>
+	          </execution>
+	          <execution>
+	            <id>copy-main-dependencies</id>
+							<phase>initialize</phase>
+	            <goals>
+	              <goal>copy-dependencies</goal>
+	            </goals>
+	            <configuration>
+	              <outputDirectory>${srcLibDir}</outputDirectory>
+								<includeScope>compile</includeScope>
+								<excludeScope>test</excludeScope>
+								<excludeScope>provided</excludeScope>
+								<excludeScope>runtime</excludeScope>
+	            </configuration>
+	          </execution>
+	        </executions>
+	      </plugin>
+	    </plugins>
+	  </build>
+
+ 	<dependencies>
+			<dependency>
+			  <groupId>junit</groupId>
+			  <artifactId>junit</artifactId>
+			  <version>${jUnitVersion}</version>
+			  <scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.hamcrest</groupId>
+						<artifactId>hamcrest-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<dependency>
+			  <groupId>org.roboguice</groupId>
+			  <artifactId>roboguice</artifactId>
+			  <version>${roboGuiceVersion}</version>
+				<scope>compile</scope>
+			</dependency>
+			
+		 <dependency>
+		   <groupId>com.google.code.findbugs</groupId>
+		   <artifactId>jsr305</artifactId>
+		   <version>${jsr305Version}</version>
+			<scope>compile</scope>
+		 </dependency>	
+		
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockitoVersion}</version>
+			<scope>test</scope>
+		</dependency>		
+	</dependencies>
+
+</project>
